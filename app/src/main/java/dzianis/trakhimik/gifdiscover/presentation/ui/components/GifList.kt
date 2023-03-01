@@ -18,7 +18,7 @@ fun GifList(
     modifier: Modifier = Modifier
 ) {
     var lazyColumnState = rememberLazyListState()
-    LaunchedEffect(key1 = (lazyColumnState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: 0) > items.size - 3) {
+    LaunchedEffect(key1 = (lazyColumnState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: -3) > items.size - 3) {
         onLoadNext()
     }
     LazyColumn(
